@@ -34,6 +34,9 @@ public class FXCalculatorServiceImpl implements IFXCalculatorService {
 		for (PairRates p : currencyRates) {
 			if (p.getBase().equals(base) & p.getTerm().equals(term)) {
 				convertedAmount = getFormattedAmount(base, amount * p.getRate());
+				log.info(base + " " + amount + " = " + convertedAmount + " " + term);
+
+				return;
 			}
 		}
 		if (convertedAmount != null) {
